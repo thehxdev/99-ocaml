@@ -5,11 +5,12 @@ open Stdio
 let square x = x * x
 
 
-let is_even x = x % 2 = 0
+let is_even x = 
+    x % 2 = 0
 
 
 let rec range a b =
-    if a = b then []
+    if a >= b then []
     else a :: range (a + 1) b
 
 
