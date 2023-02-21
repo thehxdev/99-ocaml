@@ -118,3 +118,8 @@ let rec filter (func: 'a -> bool) (l: 'a list) : 'a list =
         if func x then x :: filter func rest
         else filter func rest
 
+
+let rec sum (l: int list) : int =
+    match l with
+    | [] -> 0
+    | x :: rest -> x + sum rest
