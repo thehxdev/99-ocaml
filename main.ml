@@ -111,3 +111,10 @@ let distance ((x1, y1): (float * float)) ((x2, y2): (float * float)) : float =
     Float.sqrt ( ((x1 -. x2) **. 2.) +. ((y1 -. y2) **. 2.))
 
 
+let rec filter (func: 'a -> bool) (l: 'a list) : 'a list =
+    match l with
+    | [] -> []
+    | x :: rest -> 
+        if func x then x :: filter func rest
+        else filter func rest
+
